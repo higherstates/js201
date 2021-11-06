@@ -24,7 +24,17 @@ button.addEventListener("click", (e) => {
             height.innerHTML = character['height'] + ' m';
             planet.innerHTML = character['homeworld'];
             movies.innerHTML = character['species'];
-            image.src = character['image'];
+
+            //Fix broken images:
+            if(character['id'] === 28) {
+                image.src = "https://www.hollywoodreporter.com/wp-content/uploads/2016/04/mon_mothma_rogue_one_-_h_-_2016.jpg?w=681&h=383&crop=1";
+            } else if (character['id'] === 61) {
+                image.src = "https://i.pinimg.com/originals/d8/bc/36/d8bc36174acdf28f7bad003e1d029050.jpg";
+            } else if (character['id'] === 77) {
+                image.src = "https://64.media.tumblr.com/cbe777b8c2dd46f77d6c9a1acc44c44f/c62eba925919679a-54/s1280x1920/379475555be5e3336474edeeffbb091a17484f4a.png";
+            } else {
+                image.src = character['image'];
+            }
         });
-})
+});
 
